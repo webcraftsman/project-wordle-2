@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function GuessInput({ handleSubmitGuess }) {
+function GuessInput({ handleSubmitGuess, winnerCheck }) {
   const [tenativeGuess, setTenativeGuess] = React.useState('');
 
 
@@ -10,6 +10,7 @@ function GuessInput({ handleSubmitGuess }) {
     event.preventDefault();
     console.log({ tenativeGuess});
     handleSubmitGuess(tenativeGuess);
+    winnerCheck(tenativeGuess);
     setTenativeGuess('');
   }
 
