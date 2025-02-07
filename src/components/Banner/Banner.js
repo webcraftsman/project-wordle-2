@@ -17,11 +17,11 @@ function SadBanner({answer}) {
   )
 }
 
-function Banner({winner, guesses, endGame, answer}) {
+function Banner({guesses, gameStatus, answer}) {
   return (
   <>
-      {winner && <HappyBanner guesses={guesses} />}
-      {endGame && !winner && <SadBanner answer={answer} />}
+      {gameStatus === 'won' && <HappyBanner guesses={guesses} />}
+      {gameStatus === 'lost' && <SadBanner answer={answer} />}
   </>
   )
 }
